@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { primaryFont } from "../lib/fonts";
 import { SITE_TITLE } from "@/lib/constants";
+import Link from "next/link";
 
 export default function Home() {
   return (
