@@ -4,6 +4,7 @@ import { FaRegUser } from "react-icons/fa6";
 import { getDate, getDay, getMonth, getYear, getTime } from "../../lib/getDate";
 import { getLocation } from "../../lib/getLocation";
 import { getVisitor } from "../../lib/helper";
+import Section from './Section';
 const Navbar = ({ isOpen }) => {
     const [visitor, setVisitor] = useState();
     const [date, setDate] = useState([{
@@ -72,19 +73,7 @@ const Navbar = ({ isOpen }) => {
                 <p className={`${isOpen && 'hidden'} font-lato tracking-[1px] absolute text-[10px] md:text-[10px] lg:text-[12px] xl:text-[14px] 2xl:text-[16px] sm:right-[28px] lg:right-[40px] xl:right-[34px] 2xl:right-[80px] font-bold sm:top-28 md:top-[110px] lg:top-[135px] xl:top-[120px] 2xl:top-[210px]`}>
                     TRY FOR FREE
                 </p>
-                <div className="bg-[#000000] sm:w-[300px] sm:h-[388px] md:w-[300px] md:h-[382px] lg:w-[400px] lg:h-[533px] xl:w-[380px] xl:h-[452px] 2xl:w-[541px] 2xl:h-[805px] 3xl:h-[846px] absolute sm:top-[140px] md:top-36 lg:top-[170px] xl:top-[155px] 2xl:top-[250px] right-0 rounded-bl-[20px] rounded-tl-[20px]">
-                    <img
-                        src="/assets/arrow.svg"
-                        className="sm:w-[35px] sm:h-[50px] lg:w-[45px] lg:h-[60px] xl:w-[52px] xl:h-[68px] sm:ml-3 sm:mt-5 lg:ml-3 lg:mt-5 xl:ml-7 xl:mt-7"
-                        alt=""
-                    />
-                    <img
-                        src="/assets/signature.svg"
-                        alt=""
-                        className="absolute sm:left-14 sm:top-11  lg:left-20 lg:top-11 xl:left-24 xl:top-14 w-[150px] h-[50px] lg:w-[213px] lg:h-[70px]"
-                    />
-                    <hr className="sm:ml-3 sm:mr-3 xl:ml-6 xl:mr-6" />
-                </div>
+                <Section />
             </div>
         </div>
     )

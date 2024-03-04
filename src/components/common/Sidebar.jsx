@@ -21,7 +21,7 @@ function Sidebar({ isOpen, setIsOpen }) {
 
     return (
 
-        <div>
+        <div className="hidden sm:block">
             <Navbar isOpen={isOpen} />
             {
                 !isOpen && <div onClick={() => setIsOpen(!isOpen)} className=" customScrollbar cursor-pointer min-h-screen bg-[#000000] w-[30px] lg:w-[34px] sm:h-[528px] md:h-[527px] lg:h-[703px] xl:h-[607px]  absolute left-0 top-0 overflow-y-auto">
@@ -73,15 +73,15 @@ function Sidebar({ isOpen, setIsOpen }) {
                     </p>
                 </div>
             }
+            <AnimatePresence>
+                {
+                    isOpen && <motion.div initial={{ opacity: 0, x: -5 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -100 }}
+                        className="overflow-y-auto customScrollbar h-screen absolute left-0 top-0 z-50">
 
-            {
-                isOpen && <div className="overflow-y-auto customScrollbar h-screen absolute left-0 top-0 z-50">
-                    <AnimatePresence>
-                        <motion.div
-                            initial={{ opacity: 0, x: -5 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -100, transition: { duration: 1 } }}
-                            transition={{ duration: '0.2' }}
+                        <div
+
                             className=" bg-black font-bold text-[#FFFFFF]  w-[200px] h-[750px] sm:w-[205px] sm:h-[750px] md:w-[210px] md:h-[750px]  lg:h-[840px] lg:w-[250px] xl:w-[250px] xl:h-[850px] 2xl:w-[300px] 2xl:min-h-screen customScrollbar overflow-y-auto">
                             <div>
                                 <p className=" text-[10px] transform -rotate-90 origin-left mt-[100px] ml-5 lg:mt-28 lg:ml-5 2xl:mt-36 2xl:ml-5 sm:text-[10px] lg:text-[14px] 2xl:text-[20px] tracking-[3px] font-normal"><span className="text-[#BE9F56] ">|</span> <span>PRODUCTS</span></p>
@@ -140,11 +140,12 @@ function Sidebar({ isOpen, setIsOpen }) {
                                 <p className='text-[8px] sm:text-[7px] lg:text-[11px] 2xl:text-[14px] uppercase tracking-[1px] mt-3 2xl:mt-4 ml-[100px] '>ALL PRODUCTS</p>
                                 <img src="assets/right_arrow.svg" alt="" className='w-[15px] h-[15px] xl:w-[20px] xl:h-[20px] 2xl:w-[30px] 2xl:h-[30px] mt-3 ml-2' />
                             </div>
-                        </motion.div>
+                        </div>
 
-                    </AnimatePresence>
-                </div>
-            }
+
+                    </motion.div>
+                }
+            </AnimatePresence>
         </div>
     )
 }

@@ -27,7 +27,7 @@ const Home = () => {
     return (
         <div ref={menuRef}>
             <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} menuRef={menuRef} />
-            <MobileScreen isOpen={isOpen} setIsOpen={setIsOpen} menuRef={menuRef} />
+            <MobileScreen menuRef={menuRef} />
         </div>
     )
 }
